@@ -7,7 +7,7 @@ services:
     image: "mcr.microsoft.com/mssql/server:2019-latest"
     volumes:
       - sqlserver:/var/opt/mssql
-    mem_limit: 1g
+    mem_limit: 1.5g
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: "pa55w0rd!"

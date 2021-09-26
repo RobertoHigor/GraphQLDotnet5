@@ -2,6 +2,7 @@ using System.Linq;
 using GraphQL.Data;
 using GraphQL.Models;
 using HotChocolate;
+using HotChocolate.Data;
 
 namespace GraphQL.GraphQL
 {
@@ -9,7 +10,8 @@ namespace GraphQL.GraphQL
     {
         // Injeção de dependência via método do Hot Chocolate
         // É exibido como schema Platform (omitindo o Get por padrão) na interface web
-        public IQueryable<Platform> GetPlatform([Service] AppDbContext context)
+        [UseDbContext(typeof(AppDbContext))] // Diz para obter o dbContext do pool
+        public IQueryable<Platform> GetPlatform([ScopedService] AppDbContext context)
         {
             return context.Platforms;
         }

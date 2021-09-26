@@ -1,9 +1,8 @@
-using System;
 using GraphQL.Data;
 using GraphQL.GraphQL;
+using GraphQL.Server.Ui.Voyager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +21,9 @@ namespace GraphQL
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(opt 
+            //services.AddDbContext<AppDbContext>(opt 
+            // Para multi-thread, cria instâncias de dbcontext de um tipo onde instâncias são chamadas para reuso
+            services.AddPooledDbContextFactory<AppDbContext>(opt
                 => opt.UseSqlServer(_configuration.GetConnectionString("SQL_SERVER")));
 
             // Injeção de dependência do GraphQL
@@ -46,6 +47,9 @@ namespace GraphQL
                 // Adicionando GraphQL na pipeline (endpoint /GraphQL)
                 endpoints.MapGraphQL();
             });
+
+            // Biblioteca para exibir visualmente um mapa das schemas
+            app.UseGraphQLVoyager("/graphql-voyager");
         }
     }
 }
