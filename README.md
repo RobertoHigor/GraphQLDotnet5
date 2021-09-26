@@ -9,3 +9,6 @@ Projeto feito seguindo o curso de GraphQL em .NET 5 com Hot Chocolate do [Les Ja
 Login: sa
 
 Senha: pa55w0rd!
+
+    dotnet ef migrations add AddPlatformToDB
+    dotnet ef database update
