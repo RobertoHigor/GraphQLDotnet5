@@ -1,5 +1,6 @@
 using System;
 using GraphQL.Data;
+using GraphQL.GraphQL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -21,8 +22,13 @@ namespace GraphQL
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(opt =>
-                opt.UseSqlServer(_configuration.GetConnectionString("SQL_SERVER")));
+            services.AddDbContext<AppDbContext>(opt 
+                => opt.UseSqlServer(_configuration.GetConnectionString("SQL_SERVER")));
+
+            // Injeção de dependência do GraphQL
+            services
+                .AddGraphQLServer()
+                .AddQueryType<Query>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,10 +43,8 @@ namespace GraphQL
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                // Adicionando GraphQL na pipeline (endpoint /GraphQL)
+                endpoints.MapGraphQL();
             });
         }
     }

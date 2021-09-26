@@ -11,6 +11,6 @@ namespace GraphQL.Data
         }
 
         // Representação da Model no banco de dados
-        public DbSet<Platform> Platform { get; set; }
+        public DbSet<Platform> Platforms { get; set; }
     }
 }
