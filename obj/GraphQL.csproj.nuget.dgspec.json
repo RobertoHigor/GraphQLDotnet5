@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Arquivos Importantes\\Desenvolvimento\\CSHARP\\GraphQL\\GraphQL.csproj": {}
+    "d:\\Arquivos Importantes\\Desenvolvimento\\CSHARP\\GraphQL\\GraphQL.csproj": {}
   },
   "projects": {
-    "D:\\Arquivos Importantes\\Desenvolvimento\\CSHARP\\GraphQL\\GraphQL.csproj": {
+    "d:\\Arquivos Importantes\\Desenvolvimento\\CSHARP\\GraphQL\\GraphQL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Arquivos Importantes\\Desenvolvimento\\CSHARP\\GraphQL\\GraphQL.csproj",
+        "projectUniqueName": "d:\\Arquivos Importantes\\Desenvolvimento\\CSHARP\\GraphQL\\GraphQL.csproj",
         "projectName": "GraphQL",
-        "projectPath": "D:\\Arquivos Importantes\\Desenvolvimento\\CSHARP\\GraphQL\\GraphQL.csproj",
+        "projectPath": "d:\\Arquivos Importantes\\Desenvolvimento\\CSHARP\\GraphQL\\GraphQL.csproj",
         "packagesPath": "C:\\Users\\Higor\\.nuget\\packages\\",
-        "outputPath": "D:\\Arquivos Importantes\\Desenvolvimento\\CSHARP\\GraphQL\\obj\\",
+        "outputPath": "d:\\Arquivos Importantes\\Desenvolvimento\\CSHARP\\GraphQL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
