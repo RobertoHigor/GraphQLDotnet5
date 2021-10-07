@@ -11,6 +11,7 @@ namespace GraphQL.GraphQL
         // Injeção de dependência via método do Hot Chocolate
         // É exibido como schema Platform (omitindo o Get por padrão) na interface web
         [UseDbContext(typeof(AppDbContext))] // Diz para obter o dbContext do pool
+        [UseProjection] // Para buscar objetos filhos
         public IQueryable<Platform> GetPlatform([ScopedService] AppDbContext context)
         {
             return context.Platforms;

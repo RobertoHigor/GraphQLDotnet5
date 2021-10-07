@@ -29,7 +29,8 @@ namespace GraphQL
             // Injeção de dependência do GraphQL
             services
                 .AddGraphQLServer()
-                .AddQueryType<Query>();
+                .AddQueryType<Query>()
+                .AddProjections(); // Para ativar UseProjection
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
