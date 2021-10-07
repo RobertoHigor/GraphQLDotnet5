@@ -34,7 +34,9 @@ namespace GraphQL
                 .AddQueryType<Query>()
                 .AddType<PlatformType>()
                 .AddType<CommandType>()
-                .AddProjections(); // Para ativar UseProjection
+                .AddFiltering()
+                .AddSorting();
+                //.AddProjections(); // Para ativar UseProjection
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
