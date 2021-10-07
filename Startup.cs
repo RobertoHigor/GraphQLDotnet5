@@ -1,5 +1,7 @@
 using GraphQL.Data;
 using GraphQL.GraphQL;
+using GraphQL.GraphQL.Commands;
+using GraphQL.GraphQL.Platforms;
 using GraphQL.Server.Ui.Voyager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,6 +32,8 @@ namespace GraphQL
             services
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
+                .AddType<PlatformType>()
+                .AddType<CommandType>()
                 .AddProjections(); // Para ativar UseProjection
         }
 
